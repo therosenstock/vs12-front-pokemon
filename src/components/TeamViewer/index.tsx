@@ -1,4 +1,4 @@
-import { Container } from "./styles.ts";
+import { Container, Title } from "./styles.ts";
 import { Team } from "../../models";
 import { TeamViewerPokemon } from "../TeamViewerPokemon";
 import { useTeams } from "../../hooks";
@@ -12,7 +12,8 @@ export const TeamViewer = ({ team }: TeamViewerProps) => {
 
   return (
     <Container>
-      {team.name}
+      <Title>{team.name}</Title>
+
       {team.pokemon.map((pokemon) => (
         <TeamViewerPokemon
           key={pokemon.id}

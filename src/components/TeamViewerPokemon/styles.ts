@@ -1,9 +1,32 @@
 import styled from "styled-components";
 import { PokemonType } from "../../models";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
 
-export const Title = styled.span``;
+export const Remove = styled.button`
+
+  all: unset;
+  border-radius: 16px;
+  padding: 8px 16px;
+  background-color: #444;
+  color: #fff;
+  font-weight: 700;
+  width: 100px;
+  text-align: center;
+  &:hover{
+    background-color: #333;
+  }
+`;
+export const Title = styled.span`
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 8px 0;
+`;
 
 export const Types = styled.div`
   display: flex;
@@ -11,7 +34,7 @@ export const Types = styled.div`
 `;
 
 export const Type = styled.div<{ type: PokemonType }>`
-  border-radius: 24px;
+  border-radius: 16px;
   padding: 0.25rem 0.75rem;
   color: #fff;
   background-color: ${(props) => getTypeColor(props.type)};
