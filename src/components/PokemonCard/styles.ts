@@ -13,6 +13,9 @@ export const Image = styled.img`
 
 export const Content = styled.div`
   padding: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
 `;
 
 export const Actions = styled.div`
@@ -23,4 +26,5 @@ export const Actions = styled.div`
 
 export const Title = styled.span`
   text-transform: capitalize;
+  font-weight: 700;
 `;
