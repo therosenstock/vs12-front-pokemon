@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link as ReactLink } from "react-router-dom";
 
 export const Head = styled.header`
 background-color: #0f224a;
