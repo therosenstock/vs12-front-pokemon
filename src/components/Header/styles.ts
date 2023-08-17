@@ -18,10 +18,6 @@ export const Nav = styled.nav`
 
 export const Title = styled.h1``;
 
-export const Link = styled(ReactLink)`
-  all: unset;
-  color: #fff;
-`
 export const A = styled.a`
   all: unset;
   color: #fff;

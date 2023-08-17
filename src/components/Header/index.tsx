@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Nav, Title, Head, ReactLink, A } from "./styles";
+import { Nav, Title, Head, A } from "./styles";
 
 export const Header = () => {
   return (
