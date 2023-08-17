@@ -1,11 +1,11 @@
-import { Container } from './styles.ts';
-import { Team } from '../../models';
-import { TeamViewerPokemon } from '../TeamViewerPokemon';
-import { useTeams } from '../../hooks';
+import { Container } from "./styles.ts";
+import { Team } from "../../models";
+import { TeamViewerPokemon } from "../TeamViewerPokemon";
+import { useTeams } from "../../hooks";
 
 export type TeamViewerProps = {
   team: Team;
-}
+};
 
 export const TeamViewer = ({ team }: TeamViewerProps) => {
   const { removePokemon } = useTeams();
@@ -20,7 +20,6 @@ export const TeamViewer = ({ team }: TeamViewerProps) => {
           onRemove={() => removePokemon(team.id, pokemon.id)}
         />
       ))}
-
     </Container>
   );
 };
