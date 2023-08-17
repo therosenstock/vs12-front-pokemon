@@ -45,7 +45,9 @@ export const PokemonPage = () => {
   if (!pokemon) {
     return <h1>Pokémon não encontrando!!!</h1>;
   }
-
+  if (!pokemon.types) {
+    return <h1>Type não encontrado, tente novamente!</h1>;
+  }
   return (
     <>
       <Header />
