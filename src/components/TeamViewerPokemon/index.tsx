@@ -1,11 +1,14 @@
-import { Container, Title, Type, Types } from './styles.ts';
-import { Pokemon } from '../../models';
+import { Container, Title, Type, Types } from "./styles.ts";
+import { Pokemon } from "../../models";
 
 export type TeamViewerPokemonProps = {
-  pokemon: Pokemon
+  pokemon: Pokemon;
   onRemove: (pokemon: Pokemon) => void;
-}
-export const TeamViewerPokemon = ({ pokemon, onRemove }: TeamViewerPokemonProps) => {
+};
+export const TeamViewerPokemon = ({
+  pokemon,
+  onRemove,
+}: TeamViewerPokemonProps) => {
   return (
     <Container>
       <Title>{pokemon.name}</Title>

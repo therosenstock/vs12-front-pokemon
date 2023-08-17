@@ -1,9 +1,18 @@
 import { useEffect, useState } from "react";
-import { Container, Content } from "./styles.ts";
+import {
+  Container,
+  Content,
+  Title,
+  Aside,
+  AddTeam,
+  Top,
+  TeamContent,
+} from "./styles.ts";
 import { AddTeamModal, Button, TeamList, TeamViewer } from "../../components";
 import { Team } from "../../models";
 import { useTeams } from "../../hooks";
 import { Header } from "../../components/Header/index.tsx";
+import { Subtitle } from "../Pokemon/styles.ts";
 
 export const TeamPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -22,11 +31,24 @@ export const TeamPage = () => {
     <>
       <Header />
       <Container>
-        <Button onClick={() => setShowModal(true)}>Adicionar time</Button>
+        <Top>
+          <Title>Times</Title>
+          <AddTeam>
+            <Button onClick={() => setShowModal(true)}>Adicionar time</Button>
+          </AddTeam>
+        </Top>
+
         <Content>
-          <TeamList onSelect={setTeam} />
-          {team && <TeamViewer team={team} />}
+          <TeamContent>
+            <Subtitle>Lista de Times</Subtitle>
+            <TeamList onSelect={setTeam} />
+          </TeamContent>
+          <TeamContent>
+            <Subtitle>Equipe Selecionada</Subtitle>
+            <Aside>{team && <TeamViewer team={team} />}</Aside>
+          </TeamContent>
         </Content>
+
         <AddTeamModal show={showModal} onClose={() => setShowModal(false)} />
       </Container>
     </>
