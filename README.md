@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <a href="https://ignite-todo-silk.vercel.app/" target="_blank">➡️ Acesse o deploy!</a>
+  <a href="https://vs12-front-pokemon-y9aw.vercel.app/" target="_blank">➡️ Acesse o deploy!</a>
 </p>
 
 ## 🚀 Tecnologias
