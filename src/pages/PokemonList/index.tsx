@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getPokemonList } from "../../api";
 import { Pokemon } from "../../models";
-import { Container } from "./styles.ts";
+import { Container, Search } from "./styles.ts";
 import { TextField, PokemonGrid } from "../../components";
 import { Header } from "../../components/Header/index.tsx";
 
@@ -25,9 +25,13 @@ export const PokemonListPage = () => {
     <>
       <Header />
       <Container>
-        <div>
-          <TextField value={searchText} onChangeValue={setSearchText} />
-        </div>
+        <Search>
+          <TextField
+            placeholder="Pesquise por um Pokémon..."
+            value={searchText}
+            onChangeValue={setSearchText}
+          />
+        </Search>
         <PokemonGrid pokemon={filterPokemon()} />
       </Container>
     </>

@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { PokemonListPage, PokemonPage, TeamPage } from "./pages";
 import { TeamProvider } from "./context";
+import { NotFound } from "./pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/team",
     element: <TeamPage />,
+  },
+  {
+    path: "/*",
+    element: <NotFound />,
   },
 ]);
 
