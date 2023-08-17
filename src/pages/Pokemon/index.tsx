@@ -14,6 +14,8 @@ import {
   Subtitle,
   Title,
   Type,
+  Name,
+  PokemonStats,
 } from "./styles.ts";
 import { AddPokemonModal } from "../../components/AddPokemonModal";
 
@@ -48,7 +50,7 @@ export const PokemonPage = () => {
     <>
       <Header />
       <Container>
-        <Title>{pokemon.name}</Title>
+        <Name>{pokemon.name}</Name>
         <PokeContainer>
           <PokemonPic>
             <Img src={pokemon.image}></Img>
@@ -57,7 +59,7 @@ export const PokemonPage = () => {
           <PokemonInfo>
             <Title>Sobre</Title>
             <About>
-              <Subtitle> National Nº: </Subtitle>
+              <Subtitle> ID: </Subtitle>
               <Paragraph>{pokemon.id}</Paragraph>
             </About>
             <About>
@@ -76,17 +78,16 @@ export const PokemonPage = () => {
               <Subtitle>Peso:</Subtitle>
               <Paragraph>{pokemon.weight} kg</Paragraph>
             </About>
+            <Button onClick={() => setShowModal(true)}>Adicionar</Button>
           </PokemonInfo>
-          <PokemonInfo>
+          <PokemonStats>
             <Title>Stats</Title>
             {pokemon.stats?.map((stats) => (
               <Stats>
                 {stats.name} - {stats.base_stat}
               </Stats>
             ))}
-
-            <Button onClick={() => setShowModal(true)}>Adicionar</Button>
-          </PokemonInfo>
+          </PokemonStats>
         </PokeContainer>
         <AddPokemonModal
           show={showModal}
