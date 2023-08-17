@@ -23,7 +23,11 @@ function makePokemon(data: GetPokemonResponse): Pokemon {
     name: data.name,
     types: data.types.map((item) => item.type.name as PokemonType),
     image: data.sprites.front_default,
-    back_image: data.sprites.back_default
+    back_image: data.sprites.back_default,
+    height: data.height,
+    weight: data.weight,
+    abilities: data.abilities.map((item) => item.ability.name),
+    stats: data.stats.map((stats) => ({ name: stats.stat.name, base_stat: stats.base_stat }))
   };
 }
 
@@ -76,5 +80,6 @@ interface GetPokemonResponse {
   types: {
     slot: number,
     type: { name: string, url: string }
-  }[]
+  }[],
+  weight: number,
 }

@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
-import { Container, Content } from './styles.ts';
-import { AddTeamModal, Button, TeamList, TeamViewer } from '../../components';
-import { Team } from '../../models';
-import { useTeams } from '../../hooks';
+import { useEffect, useState } from "react";
+import { Container, Content } from "./styles.ts";
+import { AddTeamModal, Button, TeamList, TeamViewer } from "../../components";
+import { Team } from "../../models";
+import { useTeams } from "../../hooks";
+import { Header } from "../../components/Header/index.tsx";
 
 export const TeamPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -17,15 +18,17 @@ export const TeamPage = () => {
     }
   }, [teams]);
 
-
   return (
-    <Container>
-      <Button onClick={() => setShowModal(true)}>Adicionar time</Button>
-      <Content>
-        <TeamList onSelect={setTeam} />
-        {team && <TeamViewer team={team} />}
-      </Content>
-      <AddTeamModal show={showModal} onClose={() => setShowModal(false)} />
-    </Container>
+    <>
+      <Header />
+      <Container>
+        <Button onClick={() => setShowModal(true)}>Adicionar time</Button>
+        <Content>
+          <TeamList onSelect={setTeam} />
+          {team && <TeamViewer team={team} />}
+        </Content>
+        <AddTeamModal show={showModal} onClose={() => setShowModal(false)} />
+      </Container>
+    </>
   );
 };
