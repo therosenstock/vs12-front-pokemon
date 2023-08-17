@@ -1,3 +1,3 @@
 export * from './Pokemon';
 export * from './PokemonList';
-export * from './Team';
+export * from './TeamPage';

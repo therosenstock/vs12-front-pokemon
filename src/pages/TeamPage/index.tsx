@@ -8,9 +8,14 @@ import {
   Top,
   TeamContent,
 } from "./styles.ts";
-import { AddTeamModal, Button, TeamList, TeamViewer } from "../../components";
-import { Team } from "../../models";
-import { useTeams } from "../../hooks";
+import {
+  AddTeamModal,
+  Button,
+  TeamList,
+  TeamViewer,
+} from "../../components/index.ts";
+import { Team } from "../../models/index.ts";
+import { useTeams } from "../../hooks/index.ts";
 import { Header } from "../../components/Header/index.tsx";
 import { Subtitle } from "../Pokemon/styles.ts";
 
